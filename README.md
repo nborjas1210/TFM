@@ -4,6 +4,9 @@
   <img src="https://github.com/user-attachments/assets/6593f632-6fdb-4839-9d9a-c01a5f5349b8" alt="chatbot_lucy">
 </p>
 
+Este trabajo hace parte del Trabajo Final de Master de Adriana Sanchez Tinoco, Anderson Adrian Viscarra Alarcon y Neil Enrique Borjas Ramos, Universidad Internacional de la Rioja.
+Master Universitario en Analisis y Visualizacion de Datos Masivos. 
+
 
 **Lucy** es una asistente virtual inteligente diseñada para ayudar a vendedores de productos electrónicos, proporcionando información clave y visualizaciones relevantes sobre los productos de su interés.  
 
