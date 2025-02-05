@@ -179,9 +179,9 @@ Lucy puede entender y responder a diversas consultas como:
 ---
 
 ## 📜 **Referencia**  
-**Base de datos**
-Hou, Y., Li, J., He, Z., Yan, A., Chen, X., & McAuley, J. (2024). Bridging language and items for retrieval and recommendation. arXiv preprint arXiv:2403.03952. Recuperado de https://amazon-reviews-2023.github.io/bajo la licencia **MIT**. Puedes usarlo, modificarlo y distribuirlo libremente.  
-**Analisis de Sentimiento**
+**Base de datos:**
+Hou, Y., Li, J., He, Z., Yan, A., Chen, X., & McAuley, J. (2024). Bridging language and items for retrieval and recommendation. arXiv preprint arXiv:2403.03952. Recuperado de https://amazon-reviews-2023.github.io/ 
+**Analisis de Sentimiento:**
 Ramachandran, R., Sudhir, S., & Unnithan, A. B. (2021). *Exploring the relationship between emotionality and product star ratings in online reviews.*  
 🔗 [Artículo en ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0970389621001178)  
 
