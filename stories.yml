@@ -1,0 +1,52 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+
+- story: creator path
+  steps:
+  - intent: who_creator
+  - action: utter_creator
+
+- story: run example action
+  steps:
+  - intent: get_action
+  - action: action_hello_world
+
+- story: top products
+  steps:
+  - intent: get_topproduct
+  - action: action_get_topproducts
+
+- story: recommendation by popularity
+  steps:
+  - intent: recommend_bypopularity
+  - action: action_recommend_by_popularity
+
+- story: show product ratings
+  steps:
+  - intent: ask_product_ratings
+  - action: action_product_ratings
+
+- story: user requests sentiment 
+  steps:
+  - intent: request_sentimentgauge
+  - action: action_generate_sentiment_gauge
+
+- story: user asks for rating behavior
+  steps:
+    - intent: ask_product_rating_behavior
+    - action: action_product_rating_behavior
+
+

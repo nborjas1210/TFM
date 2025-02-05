@@ -1,0 +1,55 @@
+# The config recipe.
+# https://rasa.com/docs/rasa/model-configuration/
+recipe: default.v1
+
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: en
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: RegexEntityExtractor  
+    use_lookup_tables: True
+    use_regexes: True
+    entities:
+      - product_name  # Example: regex patterns for product names
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: LanguageModelFeaturizer #for deeper semantic understanding
+    model_name: "bert"
+    model_weights: "bert-base-uncased"
+  - name: DIETClassifier
+    epochs: 150  # Increased epochs for potentially better performance
+    constrain_similarities: true
+    entities:
+      - PERSON
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 150  # Increased epochs for potentially better performance
+    constrain_similarities: true
+  - name: FallbackClassifier
+    threshold: 0.4
+    ambiguity_threshold: 0.1
+  
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  - name: RulePolicy
+    core_fallback_action_name: "action_default_fallback"
+    core_fallback_threshold: 0.3
+  - name: MemoizationPolicy
+  - name: UnexpecTEDIntentPolicy
+    max_history: 5
+    epochs: 150  # Increased epochs for potentially better performance
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 150  # Increased epochs for potentially better performance
+    constrain_similarities: true
+
+assistant_id: 20241218-092406-grouchy-loser

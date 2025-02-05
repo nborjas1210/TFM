@@ -1,0 +1,69 @@
+version: "3.1"
+
+rules:
+
+- rule: welcome user
+  conversation_start: true  # this rule only applies at the beginning of a conversation - Regla aplicada solo para el pincipio de una conversacion. 
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+- rule: Respond to gratitude
+  steps:
+    - intent: thank_you
+    - action: utter_thank_you
+
+- rule: Provide top products
+  steps:
+    - intent: get_topproduct
+    - action: action_get_topproducts
+
+- rule: Set user name and respond
+  steps:
+    - intent: get_username
+    - action: action_set_person_name
+
+- rule: Recommend products by popularity
+  steps:
+    - intent: recommend_bypopularity
+    - action: action_recommend_by_popularity
+
+- rule: Show product ratings
+  steps:
+    - intent: ask_product_ratings
+    - action: action_product_ratings
+
+- rule: Handle product selection
+  steps:
+    - intent: select_option
+    - action: action_product_ratings
+
+- rule: Default Fallback
+  steps:
+    - action: action_default_fallback
+
+- rule: Respond using DialoGPT
+  steps:
+   - intent: ask_dialoqpt_response
+   - action: action_dialoqpt_response
+
+- rule: Respond to goodbye
+  steps:
+   - intent: bye
+   - action: utter_goodbye
+
+- rule: Analyze common words on reviews
+  steps:
+    - intent: ask_common_words
+    - action: action_common_words
+
+- rule: Show rating behavior
+  steps:
+    - intent: ask_product_rating_behavior
+    - action: action_product_rating_behavior
+

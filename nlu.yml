@@ -1,0 +1,194 @@
+version: "3.1"
+
+nlu:
+
+#Basic Intents - Intenciones Basicas
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - good afternoon
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - good morning
+    - goodevening
+    
+- intent: bye
+  examples: |
+    - cu
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - see you around
+    - bye bye
+    - see you later
+    - Have a great day
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - extremely good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: who_creator
+  examples: |
+    - Who is your creator?
+    - who owns you?
+    - who are your parents?
+    - who is creator ?
+    - creator ?
+    - owner ?
+
+- intent: thank_you
+  examples: |
+    - thanks
+    - thank you
+    - thank you very much
+    - appreciate it
+    - many thanks
+    - cheers
+    - I'm grateful
+
+#Get User's name - Obtener el nombre del usuario.  
+- intent: get_username
+  examples: |
+    - I'm [Sophia](PERSON)
+    - Call me [Alex](PERSON)
+    - I am [Ramona](PERSON)
+    - My name is [Marlon](PERSON)
+    - Hello, my name is [Michael](PERSON)
+
+- intent: get_action
+  examples: |
+    - run test action
+    - example action
+    - run the test
+
+#Get Top Product No 1 - Obtener el producto Top 1. 
+- intent: get_topproduct
+  examples: |
+    - What is the product with the highest reviews and best rates
+    - Give me the product with the best reviews and rates
+    - Show me the top-rated product with the most reviews
+
+#Recomending based on Popularity - Recomendaciones basadas en popularidad
+- intent: recommend_bypopularity
+  examples: |
+   - Can you recommend some products to sell?
+   - Suggest the top products based on popularity.
+   - Which products have the highest ratings?
+   - Show me the most popular products.
+   - Recommend the top popular items.
+
+#Rating Distribution for Product X - Distribucion del Rating para Producto X
+- intent: ask_product_ratings
+  examples: |
+    - Give the rating breakdown for [Amazon Fire TV](product_name)?
+    - Show the distribution of ratings for [Apple TV](product_name).
+    - How is [Amazon Echo](product_name) rated?
+    - Please provide ratings for [Sony TV](product_name).
+    - [Dell Monitor](product_name) rating
+
+- regex: product_name
+  examples: |
+    - Amazon Fire TV
+    - Apple TV
+    - Sony TV
+    - Samsung Galaxy
+    - Dell Monitor
+
+- regex: parent_asin
+  examples: |
+    - B0051VVOB2
+    - B00CX5P8FC
+    - B00U3FPN4U
+
+- intent: select_option
+  examples: |
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+
+#Dialoqpt Intent. including the model to respond questions based  on DialoGPT and to keep a record of conversations for better conversations. 
+#Intencion Dialoqpt. Incluye el modelo para responder preguntas basadas en DialoGPT y mantener un record de las conversaciones, para interacciones mas coherentes
+- intent: ask_dialoqpt_response
+  examples: |
+    - What's the meaning of life?
+    - Can you tell me something interesting?
+    - What's on your mind?
+    - Do you believe in aliens?
+    - How are you feeling today?
+    - What would you do if you were a human?
+    - Can machines feel emotions?
+    - Tell me a story.
+    - Write me a poem about the stars.
+    - Do you think robots can dream?
+    - Imagine a world without the internet. What would it look like?
+    - Why is the sky blue?
+    - What's the funniest joke you know?
+    - Do you have a favorite color?
+    - What do you think about AI taking over the world?
+    - What's your opinion on AI?
+    - What do you like to do for fun?
+    - Can you help me with a random question?
+    - Tell me something random.
+
+#Common Words - Palabras Comunes
+- intent: ask_common_words
+  examples: |
+    - Summarize the reviews for [Amazon Echo](product_name)?
+    - What are the common words found in the reviews [Sony TV](product_name)?
+    - Show me a summary of the reviews for [Amazon Fire TV](product_name).
+    - Can you summarize the reviews of [Samsung Galaxy](product_name)?
+
+#Sentiment Gauge Chart - Grafica Indicadora de Sentimiento. 
+- intent: request_sentimentgauge
+  examples: |
+    - Show the sentiment for [Amazon Fire TV](product_name)
+    - What feeling generates [Sony TV](product_name)
+    - How users feel about [Samsung Galaxy](product_name)
+
+#Rating Behaviour of Product A over time - Comportamiento del rating de un producto A en el tiempo. 
+- intent: ask_product_rating_behavior
+  examples: |
+    - what is the behaviour of [Amazon Fire TV](product_name)
+    - I want to see the rating history for [Apple TV](product_name)
+    - what is the trend of [Apple Airtag](product_name)

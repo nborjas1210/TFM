@@ -1,0 +1,132 @@
+version: "3.1"
+
+intents:
+  - greet
+  - mood_great
+  - mood_unhappy
+  - bye
+  - thank_you
+  - bot_challenge
+  - who_creator
+  - ask_dialoqpt_response
+  - get_username
+  - get_action
+  - get_topproduct
+  - recommend_bypopularity
+  - ask_product_ratings
+  - select_option
+  - ask_common_words
+  - request_sentimentgauge
+  - ask_product_rating_behavior
+
+entities:
+  - PERSON
+  - top_products
+  - months
+  - top_n
+  - min_interaction
+  - product_name #this one is used for several actions. - Esta es usada por varias acciones. 
+  - parent_asin
+
+slots:
+  PERSON:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: PERSON
+
+  chat_history_ids:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  months:
+    type: float  
+    mappings:
+      - type: from_entity
+        entity: months  
+ 
+  top_products:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: top_products
+
+  possible_products:
+    type: list
+    influence_conversation: false
+    mappings:
+      - type: custom  
+
+  selected_product:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom  
+
+  product_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: product_name
+
+  word_possible_products:
+    type: list
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  word_selected_product:
+    type: list
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+
+actions:
+  - action_hello_world
+  - action_default_fallback
+  - action_get_topproducts
+  - action_set_person_name
+  - action_recommend_by_popularity
+  - action_product_ratings
+  - action_dialoqpt_response
+  - action_common_words
+  - action_generate_sentiment_gauge
+  - action_product_rating_behavior
+
+
+
+responses:
+  utter_greet:
+  - text: "Hi! My name is Lucy 🤖💜 and I'm here to provide insights and recommend products to sell 💡. How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up💪:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+
+  utter_thank_you:
+  - text: "You're welcome 😊"
+  utter_happy:
+  - text: "Great, carry on!💪"
+
+  utter_goodbye:
+  - text: "Bye. Have a great day!😊"
+  - text: "See you later! 👋 Take care and stay awesome! 🌟✨" 
+  - text: "Take care! 🎓💙 Keep exploring new ideas for selling and stay inspired! 🌎📖"
+
+  utter_iamabot:
+  - text: "Hi 👋. I am a Lucy 🤖💜, a chatbot powered by Rasa."
+
+  utter_creator:
+  - text: "Hi 👋. Im Lucy 🤖💜. A chatbot powered by Rasa. My owner is a Data Scientist of UNIR University 🎓📚"
+  - text: "My name is Lucy 🤖💜 and I am created by three students from the Master of Data Analysis and Visualization in UNIR"
+  
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
